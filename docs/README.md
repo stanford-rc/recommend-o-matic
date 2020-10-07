@@ -134,6 +134,43 @@ $ python data/recommend-o-matic.py validate --questions data/ComputeQuestions.ts
 Validation all tests pass.
 ```
 
-## 3. How do I create and deploy the interface?
+## 3. What do we validate?
+
+To ensure that the data is correct for the interface, we check the following:
+
+### validate_exists
+
+Before we read in any data files, we must ensure that they are defined, and exist,
+period. This is fairly straight forward.
+
+### validate_not_empty
+
+This validation step ensures that both data files that are read in are not empty.
+In other words, we cannot generate an interface without a list of questions and resources.
+
+
+### validate_row_length(data)
+
+For each of the resources and questions tab separated files, a row of different
+length indicates that there is possibly missing data. This step ensures that all rows
+have the same length before moving on, that way we don't hit other indexing errors
+further along in processing.
+
+### validate_columns
+
+We want to make sure that the data for the interface includes the fields
+that will be expected, and required. We also want to make sure that if a question
+is defined in the resources data, but not defined in the questions data, we
+alert the creator that he or she is referencing a question that does not exist.
+
+### validate_question_answers
+
+Since each resource provides answers to questions defined in our questions data,
+we not only need to validate that the questions are valid, but also that the answer
+provided is known. For example, if my answer to a question is "I want to use web services"
+but valid options for the question doesn't include this string, we want to alert the user that
+there is either a typo, or that the new answer should be added as a valid answer.
+
+## 4. How do I create and deploy the interface?
 
 **under development**
