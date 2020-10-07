@@ -149,7 +149,7 @@ This validation step ensures that both data files that are read in are not empty
 In other words, we cannot generate an interface without a list of questions and resources.
 
 
-### validate_row_length(data)
+### validate_row_length
 
 For each of the resources and questions tab separated files, a row of different
 length indicates that there is possibly missing data. This step ensures that all rows
