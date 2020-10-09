@@ -297,7 +297,7 @@ def generate_tsv_lookup(rows, included_only=False):
                 entry[key] = row[idx].strip()
 
         # Filter to included items
-        if included_only and entry.get('include', "yes") == "no":
+        if included_only and entry.get("include", "yes") == "no":
             continue
         entries[entry["unique_id"]] = entry
     return entries
