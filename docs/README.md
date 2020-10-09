@@ -173,4 +173,25 @@ there is either a typo, or that the new answer should be added as a valid answer
 
 ## 4. How do I create and deploy the interface?
 
-**under development**
+You can look at the [index.html]() provided in the repository to see how it works!
+You can copy this respository template, and then generat your data file, and
+if you create one of a different name you can adjust it in the index.html
+where it's loaded. The snippet below shows an example of that.
+
+```html
+<script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="recommend-o-matic.js"></script>
+<script>
+// Load the data file created for the recommend-o-matic
+$.getJSON( "resources-and-options.json", function(data) {
+    Recommendomatic(data, "#app")
+})
+</script>
+```
+
+You can then deploy the site (including the html, and static assets folder)
+to GitHub pages or wherever you happen to host your site.

@@ -240,15 +240,15 @@ def generate(data, outfile, force=False):
         sys.exit("%s exists, and --force is not set. Will not overwrite." % outfile)
 
     result = {
-        "questions": generate_tsv_lookup(data["questions"]),
-        "resources": generate_tsv_lookup(data["resources"]),
+        "questions": list(generate_tsv_lookup(data["questions"], True).values()),
+        "resources": list(generate_tsv_lookup(data["resources"], True).values()),
     }
     print("Writing questions and answers to %s" % outfile)
     with open(outfile, "w") as fd:
         fd.write(json.dumps(result, indent=4))
 
 
-def generate_tsv_lookup(rows):
+def generate_tsv_lookup(rows, included_only=False):
     """Generate a tsv lookup of questions or resources, or a
     dictionary where keys correspond to unique ids for the question or.
     resource. A question entry should have the following:
@@ -281,6 +281,7 @@ def generate_tsv_lookup(rows):
     Parameters
     ==========
     data (dict) : the dictionary with resources and questions
+    included_only (str) : don't include items with include set to no
     """
     # Create a question columns lookup
     columns = rows[0]
@@ -295,6 +296,9 @@ def generate_tsv_lookup(rows):
             else:
                 entry[key] = row[idx].strip()
 
+        # Filter to included items
+        if included_only and entry.get('include', "yes") == "no":
+            continue
         entries[entry["unique_id"]] = entry
     return entries
 
