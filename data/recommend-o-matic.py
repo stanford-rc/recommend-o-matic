@@ -239,13 +239,26 @@ def generate(data, outfile, force=False):
     if os.path.exists(outfile) and not force:
         sys.exit("%s exists, and --force is not set. Will not overwrite." % outfile)
 
+    # resource questions are sorted by generate function, questions need sorting too
+    questions = sort_by_key(generate_tsv_lookup(data["questions"], True))
+
     result = {
-        "questions": list(generate_tsv_lookup(data["questions"], True).values()),
+        "questions": list(questions.values()),
         "resources": list(generate_tsv_lookup(data["resources"], True).values()),
     }
     print("Writing questions and answers to %s" % outfile)
     with open(outfile, "w") as fd:
         fd.write(json.dumps(result, indent=4))
+
+
+def sort_by_key(dictionary):
+    """We need to sort the dictionaries by key to ensure that questions are
+    presented in the correct order
+    """
+    sorted_dictionary = {}
+    for key in sorted(dictionary):
+        sorted_dictionary[key] = dictionary[key]
+    return sorted_dictionary
 
 
 def generate_tsv_lookup(rows, included_only=False):
@@ -299,7 +312,7 @@ def generate_tsv_lookup(rows, included_only=False):
         # Filter to included items
         if included_only and entry.get("include", "yes") == "no":
             continue
-        entries[entry["unique_id"]] = entry
+        entries[entry["unique_id"]] = sort_by_key(entry)
     return entries
 
 

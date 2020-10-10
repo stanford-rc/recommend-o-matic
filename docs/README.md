@@ -173,7 +173,7 @@ there is either a typo, or that the new answer should be added as a valid answer
 
 ## 4. How do I create and deploy the interface?
 
-You can look at the [index.html](https://github.com/stanford-rc/recommend-o-matic/blob/master/docs/demo/index.html) provided in the repository to see how it works!
+You can look at the [index.html](https://github.com/stanford-rc/recommend-o-matic/blob/master/docs/demo/horizontal-layout/index.html) provided in the repository to see how it works!
 You can copy this respository template, and then generat your data file, and
 if you create one of a different name you can adjust it in the index.html
 where it's loaded. The snippet below shows an example of that.
