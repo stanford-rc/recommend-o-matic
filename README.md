@@ -10,4 +10,5 @@ cases, such as:
 
 ![img/recommend-o-matic-docs.png](img/recommend-o-matic-docs.png)
 
-To get started, read the [documentation](https://stanford-rc.github.io/recommend-o-matic/) served alongside the repository.
+To get started, read the [documentation](https://stanford-rc.github.io/recommend-o-matic/) served alongside the repository,
+or jump right into the [demo](https://stanford-rc.github.io/recommend-o-matic/demo/horizontal-layout/).
