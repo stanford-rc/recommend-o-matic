@@ -229,8 +229,6 @@ $.getJSON( "resources-and-options.json", function(data) {
     Recommendomatic({"data": data, "divid":"#app"})
 })
 </script>
-</body>
-</html>
 ```
 
 ### Options
@@ -242,6 +240,7 @@ the example above.
 
 ```js
 // usage, Recommendomatic(options)
+```
 
 | name | description | default |
 |------|-------------|---------|
