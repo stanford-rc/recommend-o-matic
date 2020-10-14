@@ -253,3 +253,12 @@ the example above.
 For background colors, you can define the class in your style definition, and simply style the cell to look
 as you'd want (e.g., you likely want to define `background-color`). For defaults, we use backgrounds
 [provided by bootstrap](https://getbootstrap.com/docs/4.0/utilities/colors/#background-color).
+
+
+## 3. Demos
+
+Since this is highly under development, we have several demos!
+
+ - [vertical layout (version 1)](https://stanford-rc.github.io/recommend-o-matic/demo/vertical-layout/) was the original version, and it was hard to see both options and the table at the same time.
+ - [horizonal layouy (version 2)](https://stanford-rc.github.io/recommend-o-matic/demo/horizontal-layout/) moved the questions to the side of the table, making it easier to see both.
+ - [simple layout (version 3)](https://stanford-rc.github.io/recommend-o-matic/demo/stanford-compute/) takes the stance that the table is too large and busy, and we want to make it more compact.
