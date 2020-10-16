@@ -35,16 +35,6 @@
         {
             "include": "yes",
             "options": [
-                "mid",
-                "contract",
-                "ondemand"
-            ],
-            "question": "How long do you anticipate needing this compute?",
-            "unique_id": "question_duration"
-        },
-        {
-            "include": "yes",
-            "options": [
                 "yes",
                 "no",
                 "not sure"
@@ -69,10 +59,11 @@
             "options": [
                 "I want to run a website",
                 "I want to run a database",
-                "I want to run a webservice",
+                "I want to run a service",
                 "I want to perform research/ML",
                 "I want to use interactive notebooks",
-                "I need help creating a tool or interface"
+                "I need code development support",
+                "I need to run some code"
             ],
             "question": "What are you seeking to create or run?",
             "unique_id": "question_run_what"
@@ -96,17 +87,14 @@
             "include": "yes",
             "name": "Stanford Sites",
             "question_cost": [
-                ""
+                "free"
             ],
             "question_database": [
-                ""
+                "no"
             ],
             "question_developer": [
                 "yes",
                 "no"
-            ],
-            "question_duration": [
-                ""
             ],
             "question_gpus": [
                 "no"
@@ -119,7 +107,7 @@
                 "I want to run a website"
             ],
             "question_sysadmin": [
-                ""
+                "yes"
             ],
             "unique_id": "resource_uit_stanford_sites",
             "url": "https://uit.stanford.edu/service/stanfordsites"
@@ -131,16 +119,15 @@
             "include": "yes",
             "name": "TCG Web Services",
             "question_cost": [
-                ""
+                "low",
+                "medium",
+                "high"
             ],
             "question_database": [
                 ""
             ],
             "question_developer": [
                 "no"
-            ],
-            "question_duration": [
-                "mid"
             ],
             "question_gpus": [
                 "no"
@@ -153,11 +140,11 @@
             ],
             "question_run_what": [
                 "I want to run a website",
-                "I want to run a database",
-                "I want to run a webservice"
+                "I want to run a service",
+                "I need to run some code"
             ],
             "question_sysadmin": [
-                ""
+                "yes"
             ],
             "unique_id": "resource_tcg_web_services",
             "url": "https://uit.stanford.edu/tcg"
@@ -172,13 +159,10 @@
                 ""
             ],
             "question_database": [
-                ""
+                "no"
             ],
             "question_developer": [
                 "no"
-            ],
-            "question_duration": [
-                "ondemand"
             ],
             "question_gpus": [
                 "no"
@@ -202,16 +186,13 @@
             "include": "yes",
             "name": "Database Administration by UIT",
             "question_cost": [
-                ""
+                "high"
             ],
             "question_database": [
                 "yes I require database services and management"
             ],
             "question_developer": [
                 ""
-            ],
-            "question_duration": [
-                "contract"
             ],
             "question_gpus": [
                 "no"
@@ -223,7 +204,7 @@
                 "I want to run a database"
             ],
             "question_sysadmin": [
-                ""
+                "yes"
             ],
             "unique_id": "resource_uit_dba",
             "url": "https://uit.stanford.edu/service/databaseadmin"
@@ -235,16 +216,15 @@
             "include": "yes",
             "name": "TCG Database Administration",
             "question_cost": [
-                ""
+                "low",
+                "medium",
+                "high"
             ],
             "question_database": [
                 "yes I require database services and management"
             ],
             "question_developer": [
                 ""
-            ],
-            "question_duration": [
-                "mid"
             ],
             "question_gpus": [
                 "no"
@@ -280,9 +260,6 @@
             "question_developer": [
                 "no"
             ],
-            "question_duration": [
-                ""
-            ],
             "question_gpus": [
                 "yes"
             ],
@@ -307,16 +284,15 @@
             "include": "yes",
             "name": "UIT Server Hosting",
             "question_cost": [
-                ""
+                "low",
+                "medium",
+                "high"
             ],
             "question_database": [
                 ""
             ],
             "question_developer": [
                 ""
-            ],
-            "question_duration": [
-                "mid"
             ],
             "question_gpus": [
                 ""
@@ -325,10 +301,12 @@
                 ""
             ],
             "question_run_what": [
-                ""
+                "I want to run a website",
+                "I want to run a database",
+                "I want to run a service"
             ],
             "question_sysadmin": [
-                ""
+                "no"
             ],
             "unique_id": "resource_uit_server_hosting",
             "url": "https://uit.stanford.edu/service/serverhosting"
@@ -351,9 +329,6 @@
             ],
             "question_developer": [
                 "no"
-            ],
-            "question_duration": [
-                ""
             ],
             "question_gpus": [
                 "yes"
@@ -389,9 +364,6 @@
             "question_developer": [
                 "no"
             ],
-            "question_duration": [
-                ""
-            ],
             "question_gpus": [
                 "yes"
             ],
@@ -424,9 +396,6 @@
             ],
             "question_developer": [
                 "no"
-            ],
-            "question_duration": [
-                ""
             ],
             "question_gpus": [
                 "yes"
@@ -461,9 +430,6 @@
             "question_developer": [
                 "yes"
             ],
-            "question_duration": [
-                ""
-            ],
             "question_gpus": [
                 "yes"
             ],
@@ -472,7 +438,7 @@
                 "moderate"
             ],
             "question_run_what": [
-                "I need help creating a tool or interface"
+                "I need code development support"
             ],
             "question_sysadmin": [
                 "no"
@@ -495,9 +461,6 @@
             "question_developer": [
                 ""
             ],
-            "question_duration": [
-                ""
-            ],
             "question_gpus": [
                 "no"
             ],
@@ -510,13 +473,76 @@
             "question_run_what": [
                 "I want to run a website",
                 "I want to run a database",
-                "I want to run a webservice"
+                "I want to run a service"
             ],
             "question_sysadmin": [
                 "no"
             ],
             "unique_id": "resource_som_medirt",
             "url": "http://med.stanford.edu/irt/infrastructure/servers.html"
+        },
+        {
+            "category": "compute",
+            "description": "adhoc computing",
+            "group": "UIT",
+            "include": "yes",
+            "name": "Farmshare",
+            "question_cost": [
+                "free"
+            ],
+            "question_database": [
+                "no"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low"
+            ],
+            "question_run_what": [
+                "I need to run some code"
+            ],
+            "question_sysadmin": [
+                "no"
+            ],
+            "unique_id": "resource_farmshare",
+            "url": "https://uit.stanford.edu/service/sharedcomputing/environments"
+        },
+        {
+            "category": "compute",
+            "description": "Personal VMs",
+            "group": "UIT",
+            "include": "yes",
+            "name": "InstaCloud",
+            "question_cost": [
+                "low",
+                "medium"
+            ],
+            "question_database": [
+                "no"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate"
+            ],
+            "question_run_what": [
+                "I need to run some code",
+                "I want to run a service"
+            ],
+            "question_sysadmin": [
+                "no"
+            ],
+            "unique_id": "resource_instacloud",
+            "url": "TBD"
         }
     ]
 }
