@@ -32,4 +32,4 @@ section.cover .cover-main>p:last-child a {
 
 [GitHub](https://github.com/stanford-rc/recommend-o-matic/)
 [Get Started](#recommend-o-matic)
-[Demo](https://stanford-rc.github.io/recommend-o-matic/demo/horizontal-layout/)
+[Demo](https://stanford-rc.github.io/recommend-o-matic/demo/stanford-compute-grid/)

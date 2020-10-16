@@ -1,0 +1,548 @@
+{
+    "questions": [
+        {
+            "include": "yes",
+            "options": [
+                "free",
+                "low",
+                "medium",
+                "high",
+                "not sure"
+            ],
+            "question": "What level of cost?",
+            "unique_id": "question_cost"
+        },
+        {
+            "include": "yes",
+            "options": [
+                "no",
+                "yes I require database services and management",
+                "yes I can deploy and manage my own database"
+            ],
+            "question": "Do you require database support?",
+            "unique_id": "question_database"
+        },
+        {
+            "include": "yes",
+            "options": [
+                "yes",
+                "no",
+                "not sure"
+            ],
+            "question": "Do you need the help of a developer?",
+            "unique_id": "question_developer"
+        },
+        {
+            "include": "yes",
+            "options": [
+                "yes",
+                "no",
+                "not sure"
+            ],
+            "question": "Do you require GPUs?",
+            "unique_id": "question_gpus"
+        },
+        {
+            "include": "yes",
+            "options": [
+                "low",
+                "moderate",
+                "high",
+                "hipaa",
+                "not sure"
+            ],
+            "question": "What is the risk level associated with your task?",
+            "unique_id": "question_risk_level"
+        },
+        {
+            "include": "yes",
+            "options": [
+                "I want to run a website",
+                "I want to run a database",
+                "I want to run a service",
+                "I want to perform research/ML",
+                "I want to use interactive notebooks",
+                "I need code development support",
+                "I need to run some code"
+            ],
+            "question": "What are you seeking to create or run?",
+            "unique_id": "question_run_what"
+        },
+        {
+            "include": "yes",
+            "options": [
+                "yes",
+                "no",
+                "not sure"
+            ],
+            "question": "Do you need an IT/sysadmin to manage the resource?",
+            "unique_id": "question_sysadmin"
+        }
+    ],
+    "resources": [
+        {
+            "category": "website",
+            "description": "Drupal / Wordpress based websites running on managed UIT infrastructure",
+            "group": "UIT",
+            "include": "yes",
+            "name": "Stanford Sites",
+            "question_cost": [
+                "free"
+            ],
+            "question_database": [
+                "no"
+            ],
+            "question_developer": [
+                "yes",
+                "no"
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate"
+            ],
+            "question_run_what": [
+                "I want to run a website"
+            ],
+            "question_sysadmin": [
+                "yes"
+            ],
+            "unique_id": "resource_uit_stanford_sites",
+            "url": "https://uit.stanford.edu/service/stanfordsites"
+        },
+        {
+            "category": "website",
+            "description": "UIT consultants for bespoke deployments not covered by standard UIT or SoM offerings.",
+            "group": "TCG",
+            "include": "yes",
+            "name": "TCG Web Services",
+            "question_cost": [
+                "low",
+                "medium",
+                "high"
+            ],
+            "question_database": [
+                ""
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate",
+                "high",
+                "hipaa"
+            ],
+            "question_run_what": [
+                "I want to run a website",
+                "I want to run a service",
+                "I need to run some code"
+            ],
+            "question_sysadmin": [
+                "yes"
+            ],
+            "unique_id": "resource_tcg_web_services",
+            "url": "https://uit.stanford.edu/tcg"
+        },
+        {
+            "category": "website",
+            "description": "GitHub pages allows for free static hosting for individual or organization accounts.",
+            "group": "External",
+            "include": "yes",
+            "name": "GitHub Pages",
+            "question_cost": [
+                ""
+            ],
+            "question_database": [
+                "no"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low"
+            ],
+            "question_run_what": [
+                "I want to run a website"
+            ],
+            "question_sysadmin": [
+                ""
+            ],
+            "unique_id": "resource_external_github_pages",
+            "url": "https://pages.github.com/"
+        },
+        {
+            "category": "database",
+            "description": "",
+            "group": "UIT",
+            "include": "yes",
+            "name": "Database Administration by UIT",
+            "question_cost": [
+                "high"
+            ],
+            "question_database": [
+                "yes I require database services and management"
+            ],
+            "question_developer": [
+                ""
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                ""
+            ],
+            "question_run_what": [
+                "I want to run a database"
+            ],
+            "question_sysadmin": [
+                "yes"
+            ],
+            "unique_id": "resource_uit_dba",
+            "url": "https://uit.stanford.edu/service/databaseadmin"
+        },
+        {
+            "category": "database",
+            "description": "TCG doesn't offer database administration, but does do DB deployment for databases that don't require much administration at all: mysql, mariadb and postgresql",
+            "group": "TCG",
+            "include": "yes",
+            "name": "TCG Database Administration",
+            "question_cost": [
+                "low",
+                "medium",
+                "high"
+            ],
+            "question_database": [
+                "yes I require database services and management"
+            ],
+            "question_developer": [
+                ""
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                ""
+            ],
+            "question_run_what": [
+                "I want to run a database"
+            ],
+            "question_sysadmin": [
+                ""
+            ],
+            "unique_id": "resource_tcg_dba",
+            "url": "https://uit.stanford.edu/tcg"
+        },
+        {
+            "category": "compute",
+            "description": "Sherlock is a shared compute cluster available for use by all Stanford faculty and their research teams for sponsored or departmental faculty research. Using the Slurm resource manager, all research teams have access to a base set of general compute nodes, GPU-based servers, and a multi-petabyte Lustre parallel file system for temporary files. Faculty can supplement these shared nodes by purchasing additional servers, thus becoming Sherlock owners. By becoming an owner, your group will not only have exclusive use of purchased nodes, but will have access to the over 1,300 owner compute nodes. Thus far, owners from more than 140 research groups have added compute nodes to Sherlock for their team's exclusive use.",
+            "group": "SRCC",
+            "include": "yes",
+            "name": "Sherlock Cluster",
+            "question_cost": [
+                "free",
+                "low",
+                "medium",
+                "high"
+            ],
+            "question_database": [
+                "no",
+                "yes I can deploy and manage my own database"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "yes"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate"
+            ],
+            "question_run_what": [
+                "I want to perform research/ML",
+                "I want to use interactive notebooks"
+            ],
+            "question_sysadmin": [
+                ""
+            ],
+            "unique_id": "resource_srcc_sherlock",
+            "url": "https://www.sherlock.stanford.edu/"
+        },
+        {
+            "category": "compute",
+            "description": "",
+            "group": "UIT",
+            "include": "yes",
+            "name": "UIT Server Hosting",
+            "question_cost": [
+                "low",
+                "medium",
+                "high"
+            ],
+            "question_database": [
+                ""
+            ],
+            "question_developer": [
+                ""
+            ],
+            "question_gpus": [
+                ""
+            ],
+            "question_risk_level": [
+                ""
+            ],
+            "question_run_what": [
+                "I want to run a website",
+                "I want to run a database",
+                "I want to run a service"
+            ],
+            "question_sysadmin": [
+                "no"
+            ],
+            "unique_id": "resource_uit_server_hosting",
+            "url": "https://uit.stanford.edu/service/serverhosting"
+        },
+        {
+            "category": "compute",
+            "description": "The Stanford Genomics Cluster is available to members of the Genomics research community at Stanford. With scientific support from the Genetics Bioinformatics Service Center (GBSC) and system administration from the Stanford Research Computing Center (SRCC), the SCG cluster uses a charge-back model to provide access to a wide array of bioinformatics tools, techniques and scientific support expertise. It has approximately 2000 compute cores and 9PB of usable storage.",
+            "group": "SRCC",
+            "include": "yes",
+            "name": "SCG Genomics Cluster",
+            "question_cost": [
+                "free",
+                "low",
+                "medium",
+                "high"
+            ],
+            "question_database": [
+                "no",
+                "yes I can deploy and manage my own database"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "yes"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate",
+                "high"
+            ],
+            "question_run_what": [
+                "I want to perform research/ML",
+                "I want to use interactive notebooks"
+            ],
+            "question_sysadmin": [
+                ""
+            ],
+            "unique_id": "resource_srcc_scg",
+            "url": "https://login.scg.stanford.edu/"
+        },
+        {
+            "category": "compute",
+            "description": "Nero is a new highly-secure, fully-integrated research data platform to enable cross-disciplinary collaboration, with capabilities to easily develop and share data models. Nero's platform meets or exceeds Stanford's minimum security standards for High Risk and Protected Health Information (PHI) data. Nero is managed by experienced IT staff to meet data security requirements. Researchers can focus on science, so there is no need to deal with the hassle, expense, and risk of operating and maintaining their own servers. Standard analytical software like Jupyter Notebook, STATA and R are also updated and patched by the IT staff. Nero is designed to support Big Data team science. Big Data research benefits from the availability of High Risk and PHI compliant environments, whether for analysis of social network data or health data. Nero brings the analytical communities across different disciplines together to work in a collaborative and secure environment.",
+            "group": "SRCC",
+            "include": "yes",
+            "name": "Nero Cluster",
+            "question_cost": [
+                ""
+            ],
+            "question_database": [
+                "no",
+                "yes I can deploy and manage my own database"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "yes"
+            ],
+            "question_risk_level": [
+                "high",
+                "hipaa"
+            ],
+            "question_run_what": [
+                "I want to perform research/ML",
+                "I want to use interactive notebooks"
+            ],
+            "question_sysadmin": [
+                ""
+            ],
+            "unique_id": "resource_srcc_nero",
+            "url": "http://med.stanford.edu/nero/why-nero.html"
+        },
+        {
+            "category": "compute",
+            "description": "The Institute for Computational & Mathematical Engineering (ICME) GPU cluster consists of servers with 140 GPU cores and 1.2 TB of RAM. In addition, ICME also has an MPI cluster with 184 CPUs and 172 GB of RAM, available to students and faculty from ICME.",
+            "group": "SRCC",
+            "include": "yes",
+            "name": "ICME GPU Cluster",
+            "question_cost": [
+                ""
+            ],
+            "question_database": [
+                "no",
+                "yes I can deploy and manage my own database"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "yes"
+            ],
+            "question_risk_level": [
+                ""
+            ],
+            "question_run_what": [
+                "I want to perform research/ML"
+            ],
+            "question_sysadmin": [
+                ""
+            ],
+            "unique_id": "resource_srcc_icme_cluster",
+            "url": "https://srcc.stanford.edu/icme"
+        },
+        {
+            "category": "software",
+            "description": "This service provides researchers with skilled Research Software Engineers (RSEs) to assist in the creation of efficient, scalable, and sustainable research software in order to enable new scientific advances. Specifically, the service provides software development and integration resources, enabling research students, faculty and staff to focus on their research.",
+            "group": "SRCC",
+            "include": "yes",
+            "name": "Research Software Engineering Services",
+            "question_cost": [
+                "free",
+                "low",
+                "medium",
+                "high"
+            ],
+            "question_database": [
+                ""
+            ],
+            "question_developer": [
+                "yes"
+            ],
+            "question_gpus": [
+                "yes"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate"
+            ],
+            "question_run_what": [
+                "I need code development support"
+            ],
+            "question_sysadmin": [
+                "no"
+            ],
+            "unique_id": "resource_srcc_rse_services",
+            "url": "https://uit.stanford.edu/research-software-engineering-services"
+        },
+        {
+            "category": "compute",
+            "description": "Limitations http://med.stanford.edu/irt/infrastructure/servers/hosting/supported.html",
+            "group": "SoM",
+            "include": "yes",
+            "name": "MedIRT",
+            "question_cost": [
+                ""
+            ],
+            "question_database": [
+                ""
+            ],
+            "question_developer": [
+                ""
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate",
+                "high",
+                "hipaa"
+            ],
+            "question_run_what": [
+                "I want to run a website",
+                "I want to run a database",
+                "I want to run a service"
+            ],
+            "question_sysadmin": [
+                "no"
+            ],
+            "unique_id": "resource_som_medirt",
+            "url": "http://med.stanford.edu/irt/infrastructure/servers.html"
+        },
+        {
+            "category": "compute",
+            "description": "adhoc computing",
+            "group": "UIT",
+            "include": "yes",
+            "name": "Farmshare",
+            "question_cost": [
+                "free"
+            ],
+            "question_database": [
+                "no"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low"
+            ],
+            "question_run_what": [
+                "I need to run some code"
+            ],
+            "question_sysadmin": [
+                "no"
+            ],
+            "unique_id": "resource_farmshare",
+            "url": "https://uit.stanford.edu/service/sharedcomputing/environments"
+        },
+        {
+            "category": "compute",
+            "description": "Personal VMs",
+            "group": "UIT",
+            "include": "yes",
+            "name": "InstaCloud",
+            "question_cost": [
+                "low",
+                "medium"
+            ],
+            "question_database": [
+                "no"
+            ],
+            "question_developer": [
+                "no"
+            ],
+            "question_gpus": [
+                "no"
+            ],
+            "question_risk_level": [
+                "low",
+                "moderate"
+            ],
+            "question_run_what": [
+                "I need to run some code",
+                "I want to run a service"
+            ],
+            "question_sysadmin": [
+                "no"
+            ],
+            "unique_id": "resource_instacloud",
+            "url": "TBD"
+        }
+    ]
+}

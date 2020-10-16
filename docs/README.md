@@ -173,7 +173,7 @@ there is either a typo, or that the new answer should be added as a valid answer
 
 ## 4. How do I create and deploy the interface?
 
-You can look at the [index.html](https://github.com/stanford-rc/recommend-o-matic/blob/master/docs/demo/horizontal-layout/index.html) provided in the repository to see how it works (or use as a template to get started).
+You can look at the [index.html](https://github.com/stanford-rc/recommend-o-matic/blob/master/docs/demo/stanford-compute-grid/index.html) provided in the repository to see how it works (or use as a template to get started).
 Generally, you will want to add style sheets (css), scripts (JavaScript) and then a div
 for the component. Note that the component is under development, so the assets are statically linked
 to the "dist" folder in the root from one of the demo folders to not have redundancy. We
@@ -262,3 +262,5 @@ Since this is highly under development, we have several demos!
  - [vertical layout (version 1)](https://stanford-rc.github.io/recommend-o-matic/demo/vertical-layout/) was the original version, and it was hard to see both options and the table at the same time.
  - [horizonal layouy (version 2)](https://stanford-rc.github.io/recommend-o-matic/demo/horizontal-layout/) moved the questions to the side of the table, making it easier to see both.
  - [simple layout (version 3)](https://stanford-rc.github.io/recommend-o-matic/demo/stanford-compute/) takes the stance that the table is too large and busy, and we want to make it more compact.
+ - [grid layout (version 4)](https://stanford-rc.github.io/recommend-o-matic/demo/stanford-compute-grid/) too many cooks spoil the soup! For this version I threw away our current prototype and updated it to be as I think it might look nice.
+

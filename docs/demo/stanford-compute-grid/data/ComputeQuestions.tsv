@@ -1,0 +1,8 @@
+unique_id	question	options	include
+question_run_what	What are you seeking to create or run?	I want to run a website, I want to run a database, I want to run a service, I want to perform research/ML, I want to use interactive notebooks, I need code development support, I need to run some code	yes
+question_risk_level	What is the risk level associated with your task?	low, moderate, high, hipaa, not sure	yes
+question_sysadmin	Do you need an IT/sysadmin to manage the resource?	yes, no, not sure	yes
+question_developer	Do you need the help of a developer?	yes, no, not sure	yes
+question_database	Do you require database support?	no, yes I require database services and management, yes I can deploy and manage my own database	yes
+question_cost	What level of cost?	free, low, medium, high, not sure	yes
+question_gpus	Do you require GPUs?	yes, no, not sure	yes
