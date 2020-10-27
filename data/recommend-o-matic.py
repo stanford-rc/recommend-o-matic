@@ -89,7 +89,7 @@ def read_file(filename, sep="\t"):
     with open(filename, "r") as fd:
         lines = fd.readlines()
     lines = []
-    with open(filename, newline = '') as fd:
+    with open(filename, newline="") as fd:
         reader = csv.reader(fd, delimiter=sep)
         for entry in reader:
             lines.append([e.strip() for e in entry])
@@ -259,9 +259,9 @@ def generate(data, outfile, force=False):
 def sort_by_order(dictionary):
     """Sort quesitons by the "order" attribute"""
     sorted_dict = {}
-    keys_sorted = sorted(dictionary, key=lambda x: dictionary[x]['order'])
+    keys_sorted = sorted(dictionary, key=lambda x: dictionary[x]["order"])
     for key in keys_sorted:
-        if dictionary[key]['include'].lower() not in ['no', 'false']:
+        if dictionary[key]["include"].lower() not in ["no", "false"]:
             sorted_dict[key] = dictionary[key]
     return sorted_dict
 
