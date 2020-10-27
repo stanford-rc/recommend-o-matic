@@ -3,24 +3,18 @@
         {
             "include": "yes",
             "options": [
-                "free",
-                "low",
-                "medium",
-                "high",
-                "not sure"
+                "I want to run a website",
+                "I want to run a database",
+                "I want to run a service",
+                "I want to perform research/ML",
+                "I want to use interactive notebooks",
+                "I need code development support",
+                "I need to run some code"
             ],
-            "question": "What level of cost?",
-            "unique_id": "question_cost"
-        },
-        {
-            "include": "yes",
-            "options": [
-                "no",
-                "yes I require database services and management",
-                "yes I can deploy and manage my own database"
-            ],
-            "question": "Do you require database support?",
-            "unique_id": "question_database"
+            "order": "1",
+            "question": "What are you seeking to create or run?",
+            "tooltip": "",
+            "unique_id": "question_run_what"
         },
         {
             "include": "yes",
@@ -29,18 +23,10 @@
                 "no",
                 "not sure"
             ],
-            "question": "Do you need the help of a developer?",
-            "unique_id": "question_developer"
-        },
-        {
-            "include": "yes",
-            "options": [
-                "yes",
-                "no",
-                "not sure"
-            ],
-            "question": "Do you require GPUs?",
-            "unique_id": "question_gpus"
+            "order": "2",
+            "question": "Do you need an IT/sysadmin to manage the resource?",
+            "tooltip": "",
+            "unique_id": "question_sysadmin"
         },
         {
             "include": "yes",
@@ -51,22 +37,22 @@
                 "hipaa",
                 "not sure"
             ],
+            "order": "3",
             "question": "What is the risk level associated with your task?",
+            "tooltip": "All data and servers fall into a risk classification, as defined by the Information Security Office. Click on the link to learn more.",
             "unique_id": "question_risk_level"
         },
         {
             "include": "yes",
             "options": [
-                "I want to run a website",
-                "I want to run a database",
-                "I want to run a service",
-                "I want to perform research/ML",
-                "I want to use interactive notebooks",
-                "I need code development support",
-                "I need to run some code"
+                "no",
+                "yes I require database services and management",
+                "yes I can deploy and manage my own database"
             ],
-            "question": "What are you seeking to create or run?",
-            "unique_id": "question_run_what"
+            "order": "4",
+            "question": "Do you require database support?",
+            "tooltip": "",
+            "unique_id": "question_database"
         },
         {
             "include": "yes",
@@ -75,8 +61,24 @@
                 "no",
                 "not sure"
             ],
-            "question": "Do you need an IT/sysadmin to manage the resource?",
-            "unique_id": "question_sysadmin"
+            "order": "5",
+            "question": "Do you require GPUs?",
+            "tooltip": "GPUs are uncommon with typical mainstream computing needs, but are frequently employed when doing machine learning or specialized research calculations",
+            "unique_id": "question_gpus"
+        },
+        {
+            "include": "yes",
+            "options": [
+                "free",
+                "low",
+                "medium",
+                "high",
+                "not sure"
+            ],
+            "order": "6",
+            "question": "What level of cost?",
+            "tooltip": "",
+            "unique_id": "question_cost"
         }
     ],
     "resources": [
@@ -113,18 +115,18 @@
             "url": "https://uit.stanford.edu/service/stanfordsites"
         },
         {
-            "category": "website",
+            "category": "compute",
             "description": "UIT consultants for bespoke deployments not covered by standard UIT or SoM offerings.",
-            "group": "TCG",
+            "group": "UIT",
             "include": "yes",
-            "name": "TCG Web Services",
+            "name": "TCG Services",
             "question_cost": [
                 "low",
                 "medium",
                 "high"
             ],
             "question_database": [
-                ""
+                "yes I require database services and management"
             ],
             "question_developer": [
                 "no"
@@ -141,7 +143,8 @@
             "question_run_what": [
                 "I want to run a website",
                 "I want to run a service",
-                "I need to run some code"
+                "I need to run some code",
+                "I want to run a database"
             ],
             "question_sysadmin": [
                 "yes"
@@ -181,7 +184,7 @@
         },
         {
             "category": "database",
-            "description": "",
+            "description": "UIT database administrators.",
             "group": "UIT",
             "include": "yes",
             "name": "Database Administration by UIT",
@@ -208,38 +211,6 @@
             ],
             "unique_id": "resource_uit_dba",
             "url": "https://uit.stanford.edu/service/databaseadmin"
-        },
-        {
-            "category": "database",
-            "description": "TCG doesn't offer database administration, but does do DB deployment for databases that don't require much administration at all: mysql, mariadb and postgresql",
-            "group": "TCG",
-            "include": "yes",
-            "name": "TCG Database Administration",
-            "question_cost": [
-                "low",
-                "medium",
-                "high"
-            ],
-            "question_database": [
-                "yes I require database services and management"
-            ],
-            "question_developer": [
-                ""
-            ],
-            "question_gpus": [
-                "no"
-            ],
-            "question_risk_level": [
-                ""
-            ],
-            "question_run_what": [
-                "I want to run a database"
-            ],
-            "question_sysadmin": [
-                ""
-            ],
-            "unique_id": "resource_tcg_dba",
-            "url": "https://uit.stanford.edu/tcg"
         },
         {
             "category": "compute",
@@ -279,7 +250,7 @@
         },
         {
             "category": "compute",
-            "description": "",
+            "description": "UIT datacenter co-location. Run your own hardware in University secured datacenters.",
             "group": "UIT",
             "include": "yes",
             "name": "UIT Server Hosting",
@@ -413,40 +384,6 @@
             "url": "https://srcc.stanford.edu/icme"
         },
         {
-            "category": "software",
-            "description": "This service provides researchers with skilled Research Software Engineers (RSEs) to assist in the creation of efficient, scalable, and sustainable research software in order to enable new scientific advances. Specifically, the service provides software development and integration resources, enabling research students, faculty and staff to focus on their research.",
-            "group": "SRCC",
-            "include": "yes",
-            "name": "Research Software Engineering Services",
-            "question_cost": [
-                "free",
-                "low",
-                "medium",
-                "high"
-            ],
-            "question_database": [
-                ""
-            ],
-            "question_developer": [
-                "yes"
-            ],
-            "question_gpus": [
-                "yes"
-            ],
-            "question_risk_level": [
-                "low",
-                "moderate"
-            ],
-            "question_run_what": [
-                "I need code development support"
-            ],
-            "question_sysadmin": [
-                "no"
-            ],
-            "unique_id": "resource_srcc_rse_services",
-            "url": "https://uit.stanford.edu/research-software-engineering-services"
-        },
-        {
             "category": "compute",
             "description": "Limitations http://med.stanford.edu/irt/infrastructure/servers/hosting/supported.html",
             "group": "SoM",
@@ -483,7 +420,7 @@
         },
         {
             "category": "compute",
-            "description": "adhoc computing",
+            "description": "Adhoc computing on shared systems",
             "group": "UIT",
             "include": "yes",
             "name": "Farmshare",
@@ -513,7 +450,7 @@
         },
         {
             "category": "compute",
-            "description": "Personal VMs",
+            "description": "Adhoc computing on private systems",
             "group": "UIT",
             "include": "yes",
             "name": "InstaCloud",

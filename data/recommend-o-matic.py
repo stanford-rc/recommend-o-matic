@@ -8,6 +8,7 @@ import argparse
 import json
 import sys
 import os
+import csv
 
 
 def get_parser():
@@ -87,7 +88,11 @@ def read_file(filename, sep="\t"):
     """A helper function to read a file, and separate by the tab delimiter"""
     with open(filename, "r") as fd:
         lines = fd.readlines()
-    lines = [x.strip().split(sep) for x in lines]
+    lines = []
+    with open(filename, newline = '') as fd:
+        reader = csv.reader(fd, delimiter=sep)
+        for entry in reader:
+            lines.append([e.strip() for e in entry])
     return lines
 
 
@@ -177,7 +182,7 @@ def validate_columns(data):
     """
     validate_column_names(
         data["questions"][0],
-        ["unique_id", "question", "options", "include"],
+        ["unique_id", "question", "options", "include", "order", "tooltip"],
         "questions",
     )
 
@@ -240,7 +245,7 @@ def generate(data, outfile, force=False):
         sys.exit("%s exists, and --force is not set. Will not overwrite." % outfile)
 
     # resource questions are sorted by generate function, questions need sorting too
-    questions = sort_by_key(generate_tsv_lookup(data["questions"], True))
+    questions = sort_by_order(generate_tsv_lookup(data["questions"]))
 
     result = {
         "questions": list(questions.values()),
@@ -249,6 +254,16 @@ def generate(data, outfile, force=False):
     print("Writing questions and answers to %s" % outfile)
     with open(outfile, "w") as fd:
         fd.write(json.dumps(result, indent=4))
+
+
+def sort_by_order(dictionary):
+    """Sort quesitons by the "order" attribute"""
+    sorted_dict = {}
+    keys_sorted = sorted(dictionary, key=lambda x: dictionary[x]['order'])
+    for key in keys_sorted:
+        if dictionary[key]['include'].lower() not in ['no', 'false']:
+            sorted_dict[key] = dictionary[key]
+    return sorted_dict
 
 
 def sort_by_key(dictionary):
