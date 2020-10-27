@@ -6,7 +6,7 @@ Vue.component('recommend-o-matic', {
             <div class="row" v-for="question in questions">  
                <div class="col-md-12">
                 <div class="form-group">
-                  <label>{{ question.question }}</label>
+                  <label>{{ question.question }}</label><i v-if="question.tooltip" style="cursor:pointer; padding-left:5px; color:#CCC" class="fa fa-info-circle" data-container="body" data-toggle="popover" data-placement="top" :title="question.tooltip"></i>
                   <select class="form-control question" @change="filterOptions" v-bind:id="question.unique_id" required>
                    <option>--</option>
 		   <option v-for="option in question.options" v-bind:value="option">{{option}}</option>
