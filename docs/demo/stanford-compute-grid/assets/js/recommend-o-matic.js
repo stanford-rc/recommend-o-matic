@@ -26,7 +26,7 @@ Vue.component('recommend-o-matic', {
              <div class="row">
                <div class="col-md-12" style="padding-left:0px">
                  <div v-for="resource in resources" class="description" v-show="showResourceIndex === resource.unique_id" style="font-weight:400">
-                   <i style="color:#CCC" class="fas fa-question"></i> {{ resource.description }}
+                   <i style="color:#CCC" class="fa fa-question-circle"></i> {{ resource.description }}
                  </div>
                </div>
             </div>
